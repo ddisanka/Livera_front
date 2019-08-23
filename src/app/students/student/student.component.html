@@ -1,0 +1,115 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+
+  <input type="hidden" name="StudentID" [value]="service.formData.StudentID" />
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user-circle" [class.green-icon]="FirstName.valid" [class.red-icon]="FirstName.invalid && FirstName.touched"></i>
+        </div>
+      </div>
+      <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName" pattern="[A-Za-z]+" class="form-control" placeholder="First Name"
+        required />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user-circle" [class.green-icon]="MiddleName.valid" [class.red-icon]="MiddleName.invalid && MiddleName.touched"></i>
+        </div>
+      </div>
+      <input name="MiddleName" #MiddleName="ngModel" [(ngModel)]="service.formData.MiddleName" pattern="[A-Za-z]+" class="form-control" placeholder="Middle Name"
+        required />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user-circle" [class.green-icon]="LastName.valid" [class.red-icon]="LastName.invalid && LastName.touched"></i>
+        </div>
+      </div>
+      <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName" pattern="[A-Za-z]+" class="form-control" placeholder="Last Name"
+        required />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-mobile-alt" [class.green-icon]="Mobile.valid" [class.red-icon]="Mobile.invalid && Mobile.touched"></i>
+        </div>
+      </div>
+      <input name="Mobile" #Mobile="ngModel" [(ngModel)]="service.formData.Mobile" pattern="[0][0-9]{9}" class="form-control" placeholder="Enter the mobile Number"
+        required maxlength="10" minlength="10" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-phone-square" [class.green-icon]="Telephone.valid" [class.red-icon]="Telephone.invalid && Telephone.touched"></i>
+        </div>
+      </div>
+      <input name="Telephone" #Telephone="ngModel" [(ngModel)]="service.formData.Telephone" pattern="[0][0-9]{9}" class="form-control" placeholder="Enter the telephone Number"
+        required maxlength="10" minlength="10" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-at" [class.green-icon]="Email.valid" [class.red-icon]="Email.invalid && Email.touched"></i>
+        </div>
+      </div>
+
+      <input name="Email" #Email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" style="width:50%" type="text"
+        [(ngModel)]="service.formData.Email" class="form-control" placeholder="enter the email" required />
+
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-map-marker-alt" [class.green-icon]="Address.valid" [class.red-icon]="Address.invalid && Address.touched"></i>
+        </div>
+      </div>
+      <input name="Address" #Address="ngModel" [(ngModel)]="service.formData.Address" class="form-control" placeholder="enter the Address"
+        required />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-calendar-alt" [class.green-icon]="DOB.valid" [class.red-icon]="DOB.invalid && DOB.touched"></i>
+        </div>
+      </div>
+      <input type="Date" name="DOB" #DOB="ngModel" [(ngModel)]="service.formData.DOB" ng-pattern="/[0-9]{2}/[0-9]{2}/[0-9]{4}/
+      " class="form-control" placeholder="Date of Birth" value="2018-07-22" min="1900-01-01" max="2100-12-31"
+        required />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-id-card" [class.green-icon]="NIC.valid" [class.red-icon]="NIC.invalid && NIC.touched"></i>
+        </div>
+      </div>
+      <input name="NIC" #NIC="ngModel" [(ngModel)]="service.formData.NIC" pattern="[0-9]{12}|[0-9]{9}[Xx|Vv]" class="form-control" placeholder="NIC" required maxlength="12"
+        minlength="10" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid">
+      <i class="fas fa-database"></i> Submit
+    </button>
+  </div>
+</form>

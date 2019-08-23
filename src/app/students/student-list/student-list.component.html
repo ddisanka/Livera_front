@@ -1,0 +1,35 @@
+<table class="table table-hover">
+  <thead class="thead-dark">
+  <tr>
+  <th class=" col-md-1 " scope="col">First Name</th>
+  <th class=" col-md-1 hide" scope="col">Middle name</th>
+  <th class=" col-md-1 hide" scope="col">Last Name</th>
+  <th class=" col-md-1 " scope="col">Mobile</th>
+  <th class=" col-md-1 hide" scope="col">Telephone</th>
+  <th class=" col-md-1 hide" scope="col">Email</th>
+  <th class=" col-md-1 hide" scope="col">Address</th>
+  <th class=" col-md-1 hide" scope="col">DOB</th>
+  <th class=" col-md-1 hide" scope="col">NIC</th>
+  <th class=" col-md-1 " scope="col">Delete</th>
+  
+  </tr> 
+ </thead>
+  <tr *ngFor="let pd of service.list">
+  
+  <td class=" col-md-1 " id="data" (click)="populateForm(pd)">{{ pd.FirstName }}</td>
+  <td class=" col-md-1 hide" id="data" (click)="populateForm(pd)">{{ pd.MiddleName }}</td>
+  <td class=" col-md-1 hide" id="data" (click)="populateForm(pd)">{{ pd.LastName }}</td>
+  <td class=" col-md-1 " id="data" (click)="populateForm(pd)">{{ pd.Mobile }}</td>
+  <td class=" col-md-1 hide" id="data" (click)="populateForm(pd)">{{ pd.Telephone }}</td>
+  <td class=" col-md-1 hide" id="data" (click)="populateForm(pd)">{{ pd.Email }}</td>
+  <td class=" col-md-1 hide" id="data" (click)="populateForm(pd)">{{ pd.Address }}</td>
+  <td class=" col-md-1 hide" id="data" (click)="populateForm(pd)">{{ pd.DOB }}</td>
+  <td class=" col-md-1 hide" id="data" (click)="populateForm(pd)">{{ pd.NIC }}</td>
+  <td>
+  <i
+  class="fas fa-user-slash fa-lg text-danger"
+  (click)="onDelete(pd.StudentID)"
+  ></i>
+  </td>
+  </tr>
+  </table>
